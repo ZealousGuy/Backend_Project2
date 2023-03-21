@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <style>
+        body {
+			background-color: #222;
+			color: #fff;
+            display: flex;
+            flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+        form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			padding: 20px;
+			border-radius: 10px;
+        }
+		input[type=text] {
+			background-color: #333;
+			color: #fff;
+			border: none;
+			padding: 10px;
+			margin: 10px;
+			border-radius: 5px;
+		}
+        #result{
+            background-color: #414141;
+			color: #fff;
+			border: none;
+			padding: 10px;
+			margin: 10px;
+			border-radius: 5px;
+			resize: vertical;
+			min-height: 100px;
+			width: 50%;
+			max-width: 100%;
+			font-family: inherit; 
+        }
+    </style>
+</head>
+<body>
+    <form action="/" method="post">
+        <input type="text" name="note" placeholder="Enter a note">
+        <button>Add Note</button>
+    </form>
+    <h3>All Notes : </h3>
+    <div id="result">
+        <ul>
+            {% for note in notes%}
+                <li>{{ note }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
